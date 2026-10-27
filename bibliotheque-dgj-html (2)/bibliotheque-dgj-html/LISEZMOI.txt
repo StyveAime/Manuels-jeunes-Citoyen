@@ -1,0 +1,27 @@
+BIBLIOTHÈQUE DGJ — VERSION HTML / CSS / JAVASCRIPT (sans React)
+
+Contenu :
+  index.html      -> la page (textes, sections)
+  css/style.css   -> le design (couleurs en haut du fichier)
+  js/app.js       -> liste des livres, compteurs, lecteur PDF
+  images/         -> logo, photo de fond, couvertures
+  pdf/            -> les deux ouvrages
+
+Utilisation :
+  Le lecteur PDF ne fonctionne pas en ouvrant index.html par double-clic.
+  Il faut un petit serveur local, par exemple dans ce dossier :
+      python -m http.server 8000     puis ouvrir http://localhost:8000
+  ou l'extension "Live Server" de VS Code.
+
+Mise en ligne :
+  Copiez tout le dossier sur n'importe quel hébergeur (OVH, Hostinger,
+  Netlify, GitHub Pages...). Aucune installation n'est requise.
+
+Ajouter un livre :
+  Placez le PDF dans pdf/, la couverture dans images/, puis ajoutez une
+  entrée dans le tableau "books" en haut de js/app.js.
+
+Compteurs :
+  Dans cette version, les consultations/téléchargements sont mémorisés
+  dans le navigateur de chaque visiteur (pas de base de données).
+  Pour des totaux communs à tous, il faut un petit script serveur (PHP, etc.).

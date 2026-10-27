@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliothèque DGJ — Les Manuels du Jeune Citoyen</title>
+  <meta name="description" content="Consultez et téléchargez les ouvrages officiels de la Direction Générale de la Jeunesse de la République du Congo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="flagbar"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#accueil"><img src="images/logo-dgj.png" alt="Direction Générale de la Jeunesse — République du Congo" class="logo" /></a>
+      <nav class="nav">
+        <a href="#accueil">Accueil</a>
+        <a href="#bibliotheque">Bibliothèque</a>
+        <a href="#statistiques">Statistiques</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Les Manuels du<br />Jeune Citoyen</h1>
+          <p class="lead">La plateforme officielle de consultation et de téléchargement des ouvrages de la <strong>Direction Générale de la Jeunesse de la République du Congo.</strong></p>
+          <p class="sub">Destinés à renforcer le patriotisme et l'engagement citoyen, ces manuels constituent des outils de référence pour accompagner chaque jeune vers une citoyenneté responsable, active et engagée au service de la Nation.</p>
+          <div class="btns">
+            <a href="#bibliotheque" class="btn btn-yellow">Consulter les ouvrages →</a>
+            <a href="#bibliotheque" class="btn btn-outline-white">⬇ Télécharger</a>
+          </div>
+        </div>
+        <img src="images/livres-dgj.png" alt="Les deux manuels" class="hero-books" />
+      </div>
+    </section>
+
+    <section id="bibliotheque" class="container section">
+      <div class="section-head">
+        <div>
+          <h2>Découvrez les ouvrages</h2>
+          <p class="muted">Chaque manuel est disponible en version numérique, consultable page par page en ligne avec notre lecteur interactif, et téléchargeable gratuitement.</p>
+        </div>
+        <a href="#statistiques" class="link">Voir les statistiques →</a>
+      </div>
+      <div id="books" class="books"></div>
+    </section>
+
+    <section id="statistiques" class="stats-section">
+      <div class="container section">
+        <h2>Les chiffres du portail</h2>
+        <p class="muted small">Totaux cumulés des deux ouvrages.</p>
+        <div class="stats">
+          <div class="stat"><div class="icon">📚</div><div class="value">2</div><div class="muted">Ouvrages disponibles</div></div>
+          <div class="stat"><div class="icon">👁</div><div class="value" id="total-views">0</div><div class="muted">Consultations</div></div>
+          <div class="stat"><div class="icon">⬇</div><div class="value" id="total-downloads">0</div><div class="muted">Téléchargements</div></div>
+        </div>
+        <p class="muted center outro">Les Manuels du Jeune Citoyen ont été conçus pour accompagner la jeunesse congolaise dans la compréhension des principes fondamentaux de la citoyenneté.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><h4>Direction Générale de la Jeunesse</h4><p>Ministère en charge de la Jeunesse<br />République du Congo.</p></div>
+      <div><h4>Navigation</h4><ul><li>• <a href="#accueil">Accueil</a></li><li>• <a href="#bibliotheque">Bibliothèque</a></li><li>• <a href="#statistiques">Statistiques</a></li></ul></div>
+      <div><h4>Mission</h4><p>Favoriser l'insertion des jeunes et promouvoir les instruments de jeunesse.</p></div>
+    </div>
+    <p class="copyright">© 2026 Direction Générale de la Jeunesse — République du Congo. Tous droits réservés.</p>
+  </footer>
+
+  <!-- Lecteur PDF -->
+  <div id="reader" class="reader" hidden>
+    <div class="reader-bar">
+      <h3 id="reader-title"></h3>
+      <div class="reader-ctrls">
+        <button id="prev" aria-label="Page précédente">‹</button>
+        <input id="page-input" type="number" min="1" value="1" />
+        <span id="page-count">/ …</span>
+        <button id="next" aria-label="Page suivante">›</button>
+        <span class="sep"></span>
+        <button id="zoom-out" aria-label="Réduire">−</button>
+        <span id="zoom-label">100%</span>
+        <button id="zoom-in" aria-label="Agrandir">+</button>
+        <span class="sep"></span>
+        <button id="reader-dl" class="dl">⬇ Télécharger</button>
+        <button id="close" aria-label="Fermer">✕</button>
+      </div>
+    </div>
+    <div class="reader-body">
+      <div id="reader-loading" class="reader-msg">Chargement de l'ouvrage…</div>
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
